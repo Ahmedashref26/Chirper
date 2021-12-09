@@ -5,6 +5,13 @@ const Nav = () => (
   <nav className="nav">
     <ul>
       <li>
+        <img
+          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/baby-chick_1f424.png"
+          alt="logo"
+          className="logo"
+        />
+      </li>
+      <li>
         <NavLink to="/" exact activeClassName="active">
           Home
         </NavLink>

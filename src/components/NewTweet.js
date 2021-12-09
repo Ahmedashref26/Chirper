@@ -42,7 +42,7 @@ const NewTweet = (props) => {
         ></textarea>
         {tweetLeft <= 100 && <div className="tweet-length">{tweetLeft}</div>}
         <button className="btn" type="submit" disabled={text === ""}>
-          Submit
+          Chirp
         </button>
       </form>
     </div>
