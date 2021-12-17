@@ -6,12 +6,20 @@ import { hideLoading, showLoading } from "react-redux-loading";
 
 const AUTHED_ID = "tylermcginnis";
 
-export const handleInitialData = () => (dispatch) => {
+// export const handleInitialData = () => (dispatch) => {
+//   dispatch(showLoading());
+//   return getInitialData().then(({ users, tweets }) => {
+//     dispatch(receiveTweets(tweets));
+//     dispatch(receiveUsers(users));
+//     dispatch(setAuthedUser(AUTHED_ID));
+//     dispatch(hideLoading());
+//   });
+// };
+export const handleInitialData = () => async (dispatch) => {
   dispatch(showLoading());
-  return getInitialData().then(({ users, tweets }) => {
-    dispatch(receiveTweets(tweets));
-    dispatch(receiveUsers(users));
-    dispatch(setAuthedUser(AUTHED_ID));
-    dispatch(hideLoading());
-  });
+  const { users, tweets } = await getInitialData();
+  dispatch(receiveTweets(tweets));
+  dispatch(receiveUsers(users));
+  dispatch(setAuthedUser(AUTHED_ID));
+  dispatch(hideLoading());
 };
